@@ -48,6 +48,6 @@ public class StudentData {
                 "rollNo=" + rollNo +
                 ", name='" + name + '\'' +
                 ", grades='" + grades + '\'' +
-                '}';
+                '}'+'\n';
     }
 }
