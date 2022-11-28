@@ -69,7 +69,7 @@ return list;
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
 
             preparedStatement.setInt(1, salesId);
-            //5. execute the query
+
             numberOfRowsAffected = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
