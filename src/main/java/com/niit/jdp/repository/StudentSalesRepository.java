@@ -28,6 +28,7 @@ public class StudentSalesRepository {
     public List<StudentData> getAllStudentDatabase(){
         List<StudentData> list=new ArrayList<>();
 
+
         String selectQuery="SELECT * FROM `school`.`schooltable`;";
         try(Statement statement=connection.createStatement()){
             ResultSet resultSet = statement.executeQuery(selectQuery);
