@@ -61,5 +61,20 @@ return list;
             return numberOfRowsAffected > 0;
         }
 
+    public boolean deleteByRollNo(int salesId) {
+        int numberOfRowsAffected = 0;
+
+        String deleteQuery = "delete from `school`.`schooltable` where (`rollNo` = ?);";
+        //3. create PreparedStatement object
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
+            //4. set the values for parameters in delete query
+            preparedStatement.setInt(1, salesId);
+            //5. execute the query
+            numberOfRowsAffected = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return numberOfRowsAffected > 0;
+    }
 
 }
