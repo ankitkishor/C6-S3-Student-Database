@@ -42,4 +42,12 @@ public class StudentData {
         this.grades = grades;
     }
 
+    @Override
+    public String toString() {
+        return "StudentData{" +
+                "rollNo=" + rollNo +
+                ", name='" + name + '\'' +
+                ", grades='" + grades + '\'' +
+                '}';
+    }
 }
