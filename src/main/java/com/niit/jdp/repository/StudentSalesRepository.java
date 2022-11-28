@@ -49,8 +49,8 @@ return list;
                     "where (`rollNo` = ?);";
             try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
 
-                preparedStatement.setInt(1, rollNo);
-                preparedStatement.setString(2, grades);
+                preparedStatement.setString(1,grades);
+                preparedStatement.setInt(2, rollNo);
 
                 numberOfRowsAffected = preparedStatement.executeUpdate();
             } catch (SQLException e) {
