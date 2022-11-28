@@ -27,6 +27,7 @@ public class StudentSalesRepository {
 
         String selectQuery="SELECT * FROM `school`.`schooltable`;";
         try(Statement statement=connection.createStatement()){
+
             ResultSet resultSet = statement.executeQuery(selectQuery);
             while (resultSet.next()){
                 int rollNo = resultSet.getInt("rollNo");
@@ -53,6 +54,7 @@ return list;
                 preparedStatement.setInt(2, rollNo);
 
                 numberOfRowsAffected = preparedStatement.executeUpdate();
+
             } catch (SQLException e) {
                 throw new RuntimeException(e);
 

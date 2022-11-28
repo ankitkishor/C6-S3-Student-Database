@@ -37,13 +37,13 @@ public class RepoMain {
                             System.out.println("updating the grades using roll number ");
                             System.out.println("enter the roll number");
                             int rollNo = scanner.nextInt();
-                            System.out.println("Enter the grade");
+                            System.out.println("Enter new the grade");
                             String grades = scanner.next();
                             boolean updateStudent = repository.updateStudentByRollNo(rollNo, grades);
                             if (updateStudent) {
-                                System.out.println("\u001B[32m Salesperson updated successfully \u001B[0m");
+                                System.out.println("\u001B[32m student updated successfully \u001B[0m");
                             } else {
-                                System.err.println("Salesperson could not be updated");
+                                System.err.println("student could not be updated");
                             }
                             break;
 
@@ -53,9 +53,9 @@ public class RepoMain {
                             int deleteRollNo = scanner.nextInt();
                             boolean deletedStudent = repository.deleteByRollNo(deleteRollNo);
                             if (deletedStudent) {
-                                System.out.println("\u001B[32m Salesperson deleted successfully \u001B[0m");
+                                System.out.println("\u001B[32m student deleted successfully \u001B[0m");
                             } else {
-                                System.err.println("Salesperson could not be deleted");
+                                System.err.println("student could not be deleted");
                             }
                             break;
 
