@@ -14,11 +14,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentSalesRepository {
+public class StudentDataRepository {
     Connection connection;
     StudentDatabaseService service;
 
-    public StudentSalesRepository() throws SQLException, ClassNotFoundException {
+    public StudentDataRepository() throws SQLException, ClassNotFoundException {
         service=new StudentDatabaseService();
         connection= service.getConnectionToDatabase();
     }

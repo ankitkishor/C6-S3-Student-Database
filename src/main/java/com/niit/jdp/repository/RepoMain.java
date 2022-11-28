@@ -16,7 +16,7 @@ public class RepoMain {
 
 
             try {
-                StudentSalesRepository repository=new StudentSalesRepository();
+                StudentDataRepository repository=new StudentDataRepository();
                 Scanner scanner=new Scanner(System.in);
                 int choice=0;
                 do {
@@ -70,7 +70,7 @@ public class RepoMain {
                         default:
                             System.out.println("invalid choice please choose from menu");
                     }
-                }while(choice!=6);
+                }while(choice!=4);
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
