@@ -10,10 +10,7 @@ package com.niit.jdp.repository;
 import com.niit.jdp.model.StudentData;
 import com.niit.jdp.service.StudentDatabaseService;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,10 +43,22 @@ public class StudentSalesRepository {
 
 return list;
         }
-        public boolean updateStudentByRollNo(int rollNo,String grades ){
-        int numberOfRowsAffected=0;
-        String updateQuary="update `school`.`schooltable` set `grades` = ?" +
-                "where (`rollNo` = ?);";
+        public boolean updateStudentByRollNo(int rollNo,String grades ) {
+            int numberOfRowsAffected = 0;
+            String updateQuery = "update `school`.`schooltable` set `grades` = ?" +
+                    "where (`rollNo` = ?);";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
 
+                preparedStatement.setInt(1, rollNo);
+                preparedStatement.setString(2, grades);
+
+                numberOfRowsAffected = preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+
+
+            }
+            return numberOfRowsAffected > 0;
         }
+
 }
