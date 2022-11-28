@@ -37,6 +37,7 @@ public class StudentSalesRepository {
                 String grades = resultSet.getString("grades");
                 StudentData studentData=new StudentData(rollNo,name,grades);
                 list.add(studentData);
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
