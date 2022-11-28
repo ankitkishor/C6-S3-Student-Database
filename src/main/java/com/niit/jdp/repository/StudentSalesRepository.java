@@ -46,4 +46,10 @@ public class StudentSalesRepository {
 
 return list;
         }
+        public boolean updateStudentByRollNo(int rollNo,String grades ){
+        int numberOfRowsAffected=0;
+        String updateQuary="update `school`.`schooltable` set `grades` = ?" +
+                "where (`rollNo` = ?);";
+
+        }
 }
