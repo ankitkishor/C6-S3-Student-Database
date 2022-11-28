@@ -67,7 +67,7 @@ return list;
         String deleteQuery = "delete from `school`.`schooltable` where (`rollNo` = ?);";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery)) {
-            //4. set the values for parameters in delete query
+
             preparedStatement.setInt(1, salesId);
             //5. execute the query
             numberOfRowsAffected = preparedStatement.executeUpdate();
